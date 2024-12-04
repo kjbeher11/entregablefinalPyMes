@@ -1,0 +1,2665 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Énfasis en la Visualización de Indices &#8212; Proyecto Pymes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'graficos';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Librerías y paquetes necesarios" href="Modelo_Propuesto.html" />
+    <link rel="prev" title="Exploración de datos" href="edapyme.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo11.png" class="logo__image only-light" alt="Proyecto Pymes - Home"/>
+    <script>document.write(`<img src="_static/logo11.png" class="logo__image only-dark" alt="Proyecto Pymes - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Proyecto Superintendencia PYMEs
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="edapyme.html">Exploración de datos</a></li>
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Énfasis en la Visualización de Indices</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Modelo_Propuesto.html">Librerías y paquetes necesarios</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgraficos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/graficos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Énfasis en la Visualización de Indices</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Énfasis en la Visualización de Indices</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comportamiento-entre-variables">Comportamiento entre variables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicador-de-liquidez">Indicador de Liquidez</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#razon-corriente">Razón Corriente</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacion-de-cartera">Rotación de cartera</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacion-inventario-producto-terminado">Rotación inventario producto terminado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#productividad-ktno">Productividad KTNO</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacion-proveedores">Rotación proveedores</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicador-de-rentabilidad">Indicador de Rentabilidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roa">ROA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roe">ROE</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicador-de-endeudamiento">Indicador de Endeudamiento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#servicio-a-la-deuda">Servicio a la deuda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-de-endeudamiento">Nivel de endeudamiento</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ratio-como-variable-objetivo">Ratio como variable objetivo</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="enfasis-en-la-visualizacion-de-indices">
+<h1>Énfasis en la Visualización de Indices<a class="headerlink" href="#enfasis-en-la-visualizacion-de-indices" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;Agg&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;notebook&quot;</span>  <span class="c1"># Usa el renderer para Jupyter Notebook</span>
+<span class="c1"># Si vas a exportar como HTML y necesitas imágenes</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;png&quot;</span>  <span class="c1"># Gráficos estáticos como imágenes PNG</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;svg&quot;</span>  <span class="c1"># Formato vectorial</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="comportamiento-entre-variables">
+<h1>Comportamiento entre variables<a class="headerlink" href="#comportamiento-entre-variables" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s2">&quot;finalpymes.xlsx&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(141621, 29)
+</pre></div>
+</div>
+</div>
+</div>
+<p>El dataset original, compuesto por 141,621 registros y 29 variables, fue presentado y analizado en su estado inicial. Sin embargo, para garantizar un análisis más preciso y representativo, se decidió realizar una modificación en los datos, filtrando exclusivamente aquellas empresas que reportaron servicio de deuda (SD &gt; 0). Esta selección se implementó con el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;SD&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En el dataset inicial, la inclusión de empresas que no reportaban servicio de deuda resultaba en valores acumulados muy positivos, distorsionando significativamente los resultados descriptivos y gráficos generados. Al eliminar estos registros, se logró reducir esta distorsión, permitiendo un análisis más alineado con los objetivos del estudio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(37168, 29)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como resultado de este filtro, el dataset se redujo a 37,168 registros y 29 variables, lo que representa únicamente las empresas relevantes para el análisis.</p>
+<p>En esta etapa, exploraremos el comportamiento general de las variables en el dataset, poniendo especial atención a la interacción entre las variables numéricas y categóricas. Este análisis permitirá identificar patrones, relaciones y posibles insights que no se evidenciaron en la revisión inicial de las características generales del dataset</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empresa_counts</span> <span class="o">=</span> <span class="n">datan</span><span class="p">[</span><span class="s2">&quot;Departamento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">empresa_counts</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Departamento&quot;</span><span class="p">,</span> <span class="s2">&quot;Cantidad de Empresas&quot;</span><span class="p">]</span>
+
+<span class="n">top_departments</span> <span class="o">=</span> <span class="n">empresa_counts</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">custom_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#ffffcc&#39;</span><span class="p">,</span> <span class="s1">&#39;#a1dab4&#39;</span><span class="p">,</span> <span class="s1">&#39;#41b6c4&#39;</span><span class="p">,</span> <span class="s1">&#39;#2c7fb8&#39;</span><span class="p">,</span> <span class="s1">&#39;#253494&#39;</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">top_departments</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Departamento&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Cantidad de Empresas&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Top 5 Departamentos con más Empresas Registradas&quot;</span><span class="p">,</span>
+    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Cantidad de Empresas&quot;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Departamento&quot;</span><span class="p">:</span> <span class="s2">&quot;Departamento&quot;</span><span class="p">,</span> <span class="s2">&quot;Cantidad de Empresas&quot;</span><span class="p">:</span> <span class="s2">&quot;Número de Empresas&quot;</span><span class="p">},</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Departamento&quot;</span><span class="p">,</span>  <span class="c1"># Usar la columna para asignar colores</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">custom_colors</span>  <span class="c1"># Aplicar la gama de colores</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">texttemplate</span><span class="o">=</span><span class="s1">&#39;%</span><span class="si">{text}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">textposition</span><span class="o">=</span><span class="s1">&#39;outside&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Número de Empresas&quot;</span><span class="p">),</span>
+    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Departamento&quot;</span><span class="p">),</span>
+    <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span>  <span class="c1"># Ocultar leyenda</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a7409c844b97be1cafcc8029c6f3486b6c147763a5065c91371fc4ce5e98cf24.png" src="_images/a7409c844b97be1cafcc8029c6f3486b6c147763a5065c91371fc4ce5e98cf24.png" />
+</div>
+</div>
+<p>La gráfica resalta los cinco departamentos con más empresas registradas, con Bogotá D.C. liderando con 12,977 empresas, seguido de Antioquia con 6,766, Valle con 3,714, y Cundinamarca y Atlántico con cifras más moderadas de 2,166 y 2,060, respectivamente. Esto refleja una marcada concentración empresarial en las regiones centrales y principales polos económicos del país, siendo Bogotá el epicentro indiscutible de la actividad empresarial, influido por su infraestructura, acceso a mercados y atracción de inversión.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empresa_counts</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Departamento&quot;</span><span class="p">,</span> <span class="s2">&quot;Tipo societario&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Cantidad de Empresas&quot;</span><span class="p">)</span>
+<span class="n">top_departments</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Departamento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">index</span>
+<span class="n">filtered_data</span> <span class="o">=</span> <span class="n">empresa_counts</span><span class="p">[</span><span class="n">empresa_counts</span><span class="p">[</span><span class="s2">&quot;Departamento&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top_departments</span><span class="p">)]</span>
+<span class="n">custom_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#ffffcc&#39;</span><span class="p">,</span> <span class="s1">&#39;#a1dab4&#39;</span><span class="p">,</span> <span class="s1">&#39;#41b6c4&#39;</span><span class="p">,</span> <span class="s1">&#39;#2c7fb8&#39;</span><span class="p">,</span> <span class="s1">&#39;#253494&#39;</span><span class="p">,</span><span class="s1">&#39;#1d3557&#39;</span><span class="p">,</span><span class="s1">&#39;#84a98c&#39;</span><span class="p">,</span><span class="s1">&#39;#d5f2e3&#39;</span><span class="p">]</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">filtered_data</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Departamento&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Cantidad de Empresas&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Tipo societario&quot;</span><span class="p">,</span>
+    <span class="n">barmode</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Top 5 Departamentos con más Empresas&quot;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Departamento&quot;</span><span class="p">:</span> <span class="s2">&quot;Departamento&quot;</span><span class="p">,</span> <span class="s2">&quot;Cantidad de Empresas&quot;</span><span class="p">:</span> <span class="s2">&quot;Número de Empresas&quot;</span><span class="p">,</span> <span class="s2">&quot;Estado actual&quot;</span><span class="p">:</span> <span class="s2">&quot;Estado&quot;</span><span class="p">},</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">custom_colors</span>  <span class="c1"># Aplicar la gama de colores</span>
+<span class="p">)</span>
+
+<span class="c1"># Ajustar diseño</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Número de Empresas&quot;</span><span class="p">),</span>
+    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Departamento&quot;</span><span class="p">),</span>
+    <span class="n">legend_title_text</span><span class="o">=</span><span class="s2">&quot;Tipo societario&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Mostrar la gráfica</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/56a8907445eb4be35bb32f31b8c4a056927a6dd10005ffd01e3805f903a60a0b.png" src="_images/56a8907445eb4be35bb32f31b8c4a056927a6dd10005ffd01e3805f903a60a0b.png" />
+</div>
+</div>
+<p>La visualización presentada identifica los departamentos con mayor concentración empresarial, destacando Bogotá D.C., Valle, y Antioquia como los principales. Además, se observa una distribución por tipo societario, donde predominan las Sociedades por Acciones Simplificadas (SAS). Esta tendencia refuerza el papel de estos departamentos como centros económicos clave en el país.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">median_values</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Fecha de Corte&quot;</span><span class="p">)[[</span><span class="s1">&#39;Nivel de endeudamiento&#39;</span><span class="p">,</span> <span class="s1">&#39;Razón corriente&#39;</span><span class="p">,</span> <span class="s1">&#39;Generación FLC&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#ffffcc&#39;</span><span class="p">,</span> <span class="s1">&#39;#a1dab4&#39;</span><span class="p">,</span> <span class="s1">&#39;#41b6c4&#39;</span><span class="p">,</span> <span class="s1">&#39;#2c7fb8&#39;</span><span class="p">,</span> <span class="s1">&#39;#253494&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">median_values</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">median_values</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">median_values</span><span class="p">[</span><span class="n">column</span><span class="p">],</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="n">column</span><span class="p">,</span>
+        <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)],</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>  <span class="c1"># Ciclo de colores</span>
+        <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>  <span class="c1"># Tamaño de los marcadores</span>
+    <span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mediana de Indicadores por Año&quot;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Año&quot;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Valor del Indicador&quot;</span><span class="p">,</span>
+    <span class="n">legend_title</span><span class="o">=</span><span class="s2">&quot;Indicadores&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;plotly_white&quot;</span><span class="p">,</span>
+    <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">14</span><span class="p">),</span>
+    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/053dec8636b63186f89c6caa6aa0149857697692d2a4650fb685886683582a0c.png" src="_images/053dec8636b63186f89c6caa6aa0149857697692d2a4650fb685886683582a0c.png" />
+</div>
+</div>
+<p>La gráfica de evolución de la mediana de los indicadores financieros entre 2018 y 2022 destaca tendencias clave. La razón corriente muestra un crecimiento sostenido, reflejando una mejora en la capacidad de las empresas para cubrir obligaciones a corto plazo. Por otro lado, la generación de FLC se mantiene estable, mientras que el nivel de endeudamiento muestra ligeras variaciones pero permanece controlado. Estos resultados sugieren que las empresas están fortaleciendo su estabilidad financiera, particularmente en términos de liquidez, mientras mantienen una estrategia conservadora respecto al endeudamiento.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_agg</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Fecha de Corte&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Crear el gráfico de barras apiladas y línea</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="c1"># Agregar las barras apiladas para &quot;Razón Corriente&quot; y &quot;Nivel de Endeudamiento&quot;</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">data_agg</span><span class="p">[</span><span class="s2">&quot;Fecha de Corte&quot;</span><span class="p">],</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">data_agg</span><span class="p">[</span><span class="s2">&quot;Razón corriente&quot;</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Razón Corriente&quot;</span><span class="p">,</span>
+    <span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;#41b6c4&quot;</span>
+<span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">data_agg</span><span class="p">[</span><span class="s2">&quot;Fecha de Corte&quot;</span><span class="p">],</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">data_agg</span><span class="p">[</span><span class="s2">&quot;Nivel de endeudamiento&quot;</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Nivel de Endeudamiento&quot;</span><span class="p">,</span>
+    <span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;#a1dab4&quot;</span>
+<span class="p">))</span>
+
+<span class="c1"># Agregar la línea para &quot;ROA&quot;</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">data_agg</span><span class="p">[</span><span class="s2">&quot;Fecha de Corte&quot;</span><span class="p">],</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">data_agg</span><span class="p">[</span><span class="s2">&quot;Generación FLC&quot;</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Generación FLC&quot;</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines+markers&quot;</span><span class="p">,</span>
+    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7fb8&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">))</span>
+
+<span class="c1"># Ajustar el diseño del gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Promedio de Indicadores Financieros por Año&quot;</span><span class="p">,</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot; Indicadores&quot;</span><span class="p">),</span>
+    <span class="n">barmode</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">,</span>  <span class="c1"># Apilar las barras</span>
+    <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Indicadores&quot;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">xanchor</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">),</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;plotly_white&quot;</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/20f40fead8207e1c29c6e44e222fca8aaf35c70c3ad23403025f32e5c6b1170a.png" src="_images/20f40fead8207e1c29c6e44e222fca8aaf35c70c3ad23403025f32e5c6b1170a.png" />
+</div>
+</div>
+<p>Muestra el promedio de indicadores financieros por año, destacando la evolución de la razón corriente, el nivel de endeudamiento y la generación de FLC entre 2018 y 2022. Se observa que la razón corriente presenta un incremento gradual, alcanzando los valores más altos en 2022, lo que indica una mejora en la capacidad de las empresas para cumplir con sus obligaciones a corto plazo. El nivel de endeudamiento se mantiene relativamente estable, mientras que la generación de FLC registra ligeras fluctuaciones, pero con valores consistentes a lo largo del período. Esto sugiere un panorama financiero estable, con tendencias hacia un fortalecimiento en la liquidez de las empresas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;CIIU_abreviado&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39; CIIU&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;...&#39;</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">top_ciiu</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39; CIIU&#39;</span><span class="p">,</span> <span class="s1">&#39;CIIU_abreviado&#39;</span><span class="p">])[</span><span class="s1">&#39;FLC&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">top_ciiu</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CIIU_abreviado&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;FLC&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Top 5 Mejores Promedios de FLC por CIIU&#39;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;CIIU_abreviado&#39;</span><span class="p">:</span> <span class="s1">&#39;CIIU&#39;</span><span class="p">,</span> <span class="s1">&#39;FLC&#39;</span><span class="p">:</span> <span class="s1">&#39;Promedio FLC&#39;</span><span class="p">},</span>
+    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;FLC&#39;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;FLC&#39;</span><span class="p">,</span>
+    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;#ffffcc&#39;</span><span class="p">,</span> <span class="s1">&#39;#a1dab4&#39;</span><span class="p">,</span> <span class="s1">&#39;#41b6c4&#39;</span><span class="p">,</span> <span class="s1">&#39;#2c7fb8&#39;</span><span class="p">,</span> <span class="s1">&#39;#253494&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Promedio FLC&#39;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39; CIIU&#39;</span><span class="p">,</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># Centrar el título</span>
+    <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">texttemplate</span><span class="o">=</span><span class="s1">&#39;%</span><span class="si">{text:.2f}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">textposition</span><span class="o">=</span><span class="s1">&#39;outside&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6ae0cf1106b6baa2986d7a999d4fd103330c6e21f08b587219e80590a993a35c.png" src="_images/6ae0cf1106b6baa2986d7a999d4fd103330c6e21f08b587219e80590a993a35c.png" />
+</div>
+</div>
+<p>Resalta los sectores económicos con los mayores promedios de generación de flujo de caja libre (FLC) según el código CIIU. El sector de Construcción lidera significativamente con un promedio de 2,490,547.81, seguido por el suministro de electricidad, industrias manufactureras, transporte y almacenamiento, y la explotación de minas. La notable superioridad del sector de construcción en comparación con los demás sectores evidencia su papel clave en la generación de recursos económicos, lo que podría estar influenciado por su alta actividad y capacidad de inversión en proyectos de gran escala.</p>
+<section id="indicador-de-liquidez">
+<h2>Indicador de Liquidez<a class="headerlink" href="#indicador-de-liquidez" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NIT</th>
+      <th>años</th>
+      <th>Fecha de Corte</th>
+      <th>Total de activos</th>
+      <th>Total pasivos</th>
+      <th>Razón corriente</th>
+      <th>Rotación inventario producto terminado</th>
+      <th>Rotación cartera</th>
+      <th>Rotación proveedores</th>
+      <th>Productividad KTNO</th>
+      <th>...</th>
+      <th>Generación Efectivo</th>
+      <th>FLC</th>
+      <th>FDC/FLC</th>
+      <th>SD</th>
+      <th>FDC</th>
+      <th>Generación FLC</th>
+      <th>Tasa de Desempleo</th>
+      <th>Tasa de Ocupación</th>
+      <th>PIB</th>
+      <th>PIB DEP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3.716800e+04</td>
+      <td>37149.000000</td>
+      <td>37168.000000</td>
+      <td>3.716800e+04</td>
+      <td>3.716800e+04</td>
+      <td>37111.000000</td>
+      <td>3.186000e+04</td>
+      <td>3.657600e+04</td>
+      <td>3.186000e+04</td>
+      <td>3.657600e+04</td>
+      <td>...</td>
+      <td>37134.000000</td>
+      <td>3.716800e+04</td>
+      <td>3.716800e+04</td>
+      <td>3.716800e+04</td>
+      <td>3.716800e+04</td>
+      <td>3.713400e+04</td>
+      <td>36860.000000</td>
+      <td>34999.000000</td>
+      <td>37166.000000</td>
+      <td>37168.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>8.615892e+08</td>
+      <td>20.959757</td>
+      <td>2020.233104</td>
+      <td>2.042835e+07</td>
+      <td>1.046342e+07</td>
+      <td>13.206521</td>
+      <td>1.412693e+05</td>
+      <td>7.796766e+04</td>
+      <td>4.840119e+04</td>
+      <td>3.866049e+02</td>
+      <td>...</td>
+      <td>-4.833936</td>
+      <td>8.384701e+05</td>
+      <td>8.990537e+01</td>
+      <td>2.326276e+06</td>
+      <td>-1.487806e+06</td>
+      <td>-1.639426e+02</td>
+      <td>11.867251</td>
+      <td>182.285990</td>
+      <td>33416.825636</td>
+      <td>153486.700373</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>4.162978e+07</td>
+      <td>13.400888</td>
+      <td>1.945530</td>
+      <td>6.171417e+07</td>
+      <td>3.142624e+07</td>
+      <td>572.177050</td>
+      <td>2.401427e+07</td>
+      <td>9.339886e+06</td>
+      <td>6.611296e+06</td>
+      <td>7.106724e+04</td>
+      <td>...</td>
+      <td>1071.508247</td>
+      <td>3.783133e+07</td>
+      <td>1.712816e+04</td>
+      <td>3.850221e+07</td>
+      <td>1.226777e+07</td>
+      <td>3.261733e+04</td>
+      <td>3.584255</td>
+      <td>141.828038</td>
+      <td>33326.021729</td>
+      <td>101519.189765</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>8.000001e+08</td>
+      <td>0.000000</td>
+      <td>2017.000000</td>
+      <td>1.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>-2.355509e+06</td>
+      <td>...</td>
+      <td>-198573.000000</td>
+      <td>-4.400879e+08</td>
+      <td>-1.619655e+04</td>
+      <td>1.000000e+00</td>
+      <td>-1.106243e+09</td>
+      <td>-6.281511e+06</td>
+      <td>3.209824</td>
+      <td>0.092000</td>
+      <td>13.451994</td>
+      <td>3652.635931</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>8.160054e+08</td>
+      <td>11.000000</td>
+      <td>2019.000000</td>
+      <td>5.004917e+06</td>
+      <td>1.938962e+06</td>
+      <td>1.184353</td>
+      <td>6.403842e+00</td>
+      <td>3.348147e+01</td>
+      <td>3.284450e+01</td>
+      <td>4.849845e-02</td>
+      <td>...</td>
+      <td>-0.374026</td>
+      <td>-1.527482e+05</td>
+      <td>-2.376686e-02</td>
+      <td>9.599925e+04</td>
+      <td>-9.651652e+05</td>
+      <td>-5.036626e-01</td>
+      <td>8.754869</td>
+      <td>63.975444</td>
+      <td>8425.354585</td>
+      <td>56332.703361</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>8.903174e+08</td>
+      <td>18.000000</td>
+      <td>2020.000000</td>
+      <td>9.833846e+06</td>
+      <td>4.445236e+06</td>
+      <td>1.777251</td>
+      <td>4.920544e+01</td>
+      <td>7.249947e+01</td>
+      <td>7.033965e+01</td>
+      <td>2.005705e-01</td>
+      <td>...</td>
+      <td>0.032847</td>
+      <td>2.123890e+05</td>
+      <td>7.045683e-01</td>
+      <td>3.553455e+05</td>
+      <td>-8.987550e+04</td>
+      <td>6.332252e-01</td>
+      <td>11.343576</td>
+      <td>159.313000</td>
+      <td>20388.204806</td>
+      <td>136416.998770</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>9.003307e+08</td>
+      <td>29.000000</td>
+      <td>2022.000000</td>
+      <td>2.077525e+07</td>
+      <td>1.017146e+07</td>
+      <td>3.090929</td>
+      <td>1.405351e+02</td>
+      <td>1.421883e+02</td>
+      <td>1.384732e+02</td>
+      <td>4.964277e-01</td>
+      <td>...</td>
+      <td>0.585943</td>
+      <td>9.754378e+05</td>
+      <td>1.147391e+00</td>
+      <td>1.233916e+06</td>
+      <td>2.089495e+05</td>
+      <td>2.058118e+00</td>
+      <td>13.234388</td>
+      <td>251.646675</td>
+      <td>50933.867785</td>
+      <td>233872.353566</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>9.016262e+08</td>
+      <td>320.000000</td>
+      <td>2023.000000</td>
+      <td>6.494168e+09</td>
+      <td>2.932200e+09</td>
+      <td>82139.323952</td>
+      <td>4.283006e+09</td>
+      <td>1.613495e+09</td>
+      <td>1.132792e+09</td>
+      <td>1.322767e+07</td>
+      <td>...</td>
+      <td>52292.389140</td>
+      <td>5.830583e+09</td>
+      <td>3.301999e+06</td>
+      <td>5.901266e+09</td>
+      <td>2.553629e+08</td>
+      <td>1.969302e+05</td>
+      <td>23.242521</td>
+      <td>584.526000</td>
+      <td>124683.823762</td>
+      <td>345847.243838</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 23 columns</p>
+</div></div></div>
+</div>
+<p>Esta tabla es fundamental, ya que permite centralizar los datos dentro del rango en el que se concentra la mayor parte de la información. Dado que algunas variables presentan valores atípicos, las distribuciones en los histogramas no se aprecian claramente. Aunque estos valores atípicos no serán eliminados del análisis o del proceso del modelo, enfocaremos la visualización únicamente en el rango central para facilitar la interpretación de las distribuciones principales.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="n">variables</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Razón corriente&#39;</span><span class="p">,</span> <span class="s1">&#39;Rotación inventario producto terminado&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Rotación cartera&#39;</span><span class="p">,</span> <span class="s1">&#39;Rotación proveedores&#39;</span><span class="p">,</span> <span class="s1">&#39;Productividad KTNO&#39;</span><span class="p">,</span> <span class="s1">&#39;ROA&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ROE&#39;</span><span class="p">,</span> <span class="s1">&#39;Nivel de endeudamiento&#39;</span><span class="p">,</span> <span class="s1">&#39;Generación Efectivo&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;SD&#39;</span><span class="p">,</span> <span class="s1">&#39;Generación FLC&#39;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">:</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Fecha de Corte&quot;</span><span class="p">)[</span><span class="n">variable</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[[</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">,</span> <span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="s2">&quot;25%&quot;</span><span class="p">,</span> <span class="s2">&quot;50%&quot;</span><span class="p">,</span> <span class="s2">&quot;75%&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">]]</span>
+    
+    <span class="c1"># Definir el nombre del archivo Pickle</span>
+    <span class="n">file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;summary_</span><span class="si">{</span><span class="n">variable</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">.pkl&quot;</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">summary</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tabla de resumen para &#39;</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s2">&#39; guardada como &#39;</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tabla de resumen para &#39;Razón corriente&#39; guardada como &#39;summary_razón_corriente.pkl&#39;
+Tabla de resumen para &#39;Rotación inventario producto terminado&#39; guardada como &#39;summary_rotación_inventario_producto_terminado.pkl&#39;
+Tabla de resumen para &#39;Rotación cartera&#39; guardada como &#39;summary_rotación_cartera.pkl&#39;
+Tabla de resumen para &#39;Rotación proveedores&#39; guardada como &#39;summary_rotación_proveedores.pkl&#39;
+Tabla de resumen para &#39;Productividad KTNO&#39; guardada como &#39;summary_productividad_ktno.pkl&#39;
+Tabla de resumen para &#39;ROA&#39; guardada como &#39;summary_roa.pkl&#39;
+Tabla de resumen para &#39;ROE&#39; guardada como &#39;summary_roe.pkl&#39;
+Tabla de resumen para &#39;Nivel de endeudamiento&#39; guardada como &#39;summary_nivel_de_endeudamiento.pkl&#39;
+Tabla de resumen para &#39;Generación Efectivo&#39; guardada como &#39;summary_generación_efectivo.pkl&#39;
+Tabla de resumen para &#39;SD&#39; guardada como &#39;summary_sd.pkl&#39;
+Tabla de resumen para &#39;Generación FLC&#39; guardada como &#39;summary_generación_flc.pkl&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="razon-corriente">
+<h3>Razón Corriente<a class="headerlink" href="#razon-corriente" title="Link to this heading">#</a></h3>
+<p>La razón corriente es un indicador financiero que mide la capacidad de una empresa para cubrir sus obligaciones a corto plazo. Es crucial porque refleja la liquidez de la empresa; una razón corriente adecuada indica que la empresa puede afrontar sus deudas a corto plazo, mientras que valores muy bajos pueden señalar problemas financieros, y valores excesivamente altos podrían sugerir ineficiencia en el uso de recursos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;summary_razón_corriente.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>Fecha de Corte</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017</th>
+      <td>4352.0</td>
+      <td>7.303693</td>
+      <td>159.713422</td>
+      <td>0.003313</td>
+      <td>1.092265</td>
+      <td>1.569790</td>
+      <td>2.622994</td>
+      <td>9999.579670</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>4072.0</td>
+      <td>24.885155</td>
+      <td>1287.723621</td>
+      <td>0.000000</td>
+      <td>1.105998</td>
+      <td>1.593450</td>
+      <td>2.677911</td>
+      <td>82139.323952</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>5271.0</td>
+      <td>8.237943</td>
+      <td>117.732576</td>
+      <td>0.000000</td>
+      <td>1.126527</td>
+      <td>1.674568</td>
+      <td>2.796945</td>
+      <td>4675.211259</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>5829.0</td>
+      <td>7.080751</td>
+      <td>52.571099</td>
+      <td>0.000000</td>
+      <td>1.220610</td>
+      <td>1.858685</td>
+      <td>3.334426</td>
+      <td>2340.499261</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>5880.0</td>
+      <td>16.126973</td>
+      <td>460.260075</td>
+      <td>0.000927</td>
+      <td>1.231469</td>
+      <td>1.866510</td>
+      <td>3.290440</td>
+      <td>33976.214286</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>5899.0</td>
+      <td>20.747067</td>
+      <td>810.198275</td>
+      <td>0.000000</td>
+      <td>1.229012</td>
+      <td>1.860095</td>
+      <td>3.258336</td>
+      <td>61788.666667</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>5808.0</td>
+      <td>9.483427</td>
+      <td>117.383357</td>
+      <td>0.000607</td>
+      <td>1.273717</td>
+      <td>1.967164</td>
+      <td>3.456371</td>
+      <td>7103.963684</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>La tabla presenta un resumen estadístico anual de los datos entre 2017 y 2023, mostrando fluctuaciones significativas en el promedio y la variabilidad de los datos. Los valores promedio oscilan desde 7.08 en 2020 hasta un máximo de 24.88 en 2018, influenciados por valores atípicos extremos como los máximos de 82,139.32 en 2018 y 61,788.67 en 2022. A pesar de esta alta dispersión, evidenciada por desviaciones estándar elevadas en algunos años, los percentiles (25%, 50%, y 75%) permanecen relativamente estables, con medianas cercanas a 1.5 y 3.3 en todo el periodo. Esto sugiere que la mayoría de los datos se concentran en un rango central definido, mientras que los valores atípicos representan casos extremos que afectan las métricas globales.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Razón corriente&quot;</span><span class="p">,</span>
+    <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>  
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribution de Razón corriente&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;simple_white&quot;</span><span class="p">,</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#6a1b9a&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Razón corriente&quot;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Frequency&quot;</span><span class="p">,</span>
+    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span>  
+<span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;histograma_razón_corriente.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;histograma_razón_corriente.html&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6fa78f247fd4315e74ae7527a2d80cebea9bf3ee165134e09a05faa8f6e39e25.png" src="_images/6fa78f247fd4315e74ae7527a2d80cebea9bf3ee165134e09a05faa8f6e39e25.png" />
+</div>
+</div>
+<p>La distribución de la razón corriente muestra una marcada asimetría positiva, con la mayoría de los valores concentrados entre 0 y 3. Este comportamiento indica que la mayoría de las empresas tienen niveles razonables de liquidez para cubrir sus obligaciones a corto plazo, mientras que hay una menor frecuencia de valores más altos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">violin</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Razón corriente&#39;</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;violin_razón_corriente.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/71033ba80af38954f57bde4856b34c58b80870a1202f9141bb5db9e8e7c08a41.png" src="_images/71033ba80af38954f57bde4856b34c58b80870a1202f9141bb5db9e8e7c08a41.png" />
+</div>
+</div>
+<p>El gráfico de violín proporciona una visualización más detallada de la dispersión y la densidad de los valores de la razón corriente. La distribución central muestra una fuerte concentración alrededor de la mediana, con un rango intercuartil que refleja estabilidad en la mayoría de los datos. Sin embargo, la presencia de colas alargadas hacia valores más altos evidencia la existencia de valores atípicos, lo que refuerza la asimetría identificada en el histograma y la necesidad de análisis focalizados en las distribuciones centrales.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Razón corriente&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;FDC/FLC&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Fecha de Corte&quot;</span><span class="p">,</span><span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0f1416216f05efd09d19172065f38d9ddc9a05647e13deef55c3efbeef334ac8.png" src="_images/0f1416216f05efd09d19172065f38d9ddc9a05647e13deef55c3efbeef334ac8.png" />
+</div>
+</div>
+<p>El gráfico de dispersión ilustra la relación entre la razón corriente y el FDC/FLC, segmentada por años. Se observa que, aunque la mayoría de los puntos se concentran en niveles bajos de razón corriente y valores cercanos a cero de FDC/FLC, hay una mayor dispersión a medida que aumentan los niveles de liquidez. Esto sugiere que empresas con mayor liquidez presentan mayor variabilidad en su generación de flujos de caja, lo que podría estar relacionado con dinámicas operativas o estrategias financieras específicas. La segmentación por años muestra consistencia en este comportamiento a lo largo del tiempo.</p>
+</section>
+<section id="rotacion-de-cartera">
+<h3>Rotación de cartera<a class="headerlink" href="#rotacion-de-cartera" title="Link to this heading">#</a></h3>
+<p>La rotación de cartera es un indicador financiero que mide la eficiencia con la que una empresa gestiona y recupera sus cuentas por cobrar, calculándose como ventas a crédito divididas entre el promedio de cuentas por cobrar. Es importante porque una alta rotación indica que la empresa cobra rápidamente a sus clientes, mejorando su flujo de caja, mientras que una rotación baja puede señalar problemas en la gestión de cobros o políticas de crédito poco eficientes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;summary_rotación_cartera.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>Fecha de Corte</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017</th>
+      <td>4291.0</td>
+      <td>376669.066426</td>
+      <td>2.463135e+07</td>
+      <td>0.0</td>
+      <td>35.753840</td>
+      <td>75.002419</td>
+      <td>137.351741</td>
+      <td>1.613495e+09</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>4008.0</td>
+      <td>948.109519</td>
+      <td>3.567057e+04</td>
+      <td>0.0</td>
+      <td>35.031390</td>
+      <td>74.713429</td>
+      <td>144.319720</td>
+      <td>2.240510e+06</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>5197.0</td>
+      <td>890.700175</td>
+      <td>2.164373e+04</td>
+      <td>0.0</td>
+      <td>34.122229</td>
+      <td>72.528431</td>
+      <td>135.217081</td>
+      <td>1.292905e+06</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>5751.0</td>
+      <td>895.370484</td>
+      <td>2.069297e+04</td>
+      <td>0.0</td>
+      <td>37.280422</td>
+      <td>79.614244</td>
+      <td>164.349208</td>
+      <td>1.386330e+06</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>5788.0</td>
+      <td>11598.777485</td>
+      <td>6.652431e+05</td>
+      <td>0.0</td>
+      <td>32.929559</td>
+      <td>74.056065</td>
+      <td>148.816561</td>
+      <td>4.927356e+07</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>5811.0</td>
+      <td>198024.820961</td>
+      <td>1.003110e+07</td>
+      <td>0.0</td>
+      <td>31.187030</td>
+      <td>68.661895</td>
+      <td>140.457714</td>
+      <td>6.663798e+08</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>5730.0</td>
+      <td>702.233646</td>
+      <td>1.648406e+04</td>
+      <td>0.0</td>
+      <td>30.655188</td>
+      <td>65.700124</td>
+      <td>130.998899</td>
+      <td>1.141807e+06</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>La tabla presenta un análisis estadístico de un indicador financiero clave para las empresas en el período comprendido entre 2017 y 2023. El promedio de los valores muestra fluctuaciones notables a lo largo de los años, con picos significativos en 2017 y 2021 debido a la presencia de valores máximos extraordinarios (1.61e+09 en 2017 y 4.92e+07 en 2021). La mediana y los percentiles (25% y 75%) permanecen relativamente estables, indicando que la mayor parte de las empresas se concentran en un rango definido, aunque valores atípicos generan una alta dispersión reflejada en la desviación estándar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Rotación cartera&#39;</span><span class="p">,</span>
+    <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>  
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribution de Rotación cartera&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;simple_white&quot;</span><span class="p">,</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#6a1b9a&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Rotación cartera&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Frequency&quot;</span><span class="p">,</span>
+    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span>  <span class="c1"># Centrar el título</span>
+<span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;histograma_rotación_cartera.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;histograma_rotación_cartera.html&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/73e8e8fd10f086d26ed70b57a7345e9332d10e464906d4851cda4fd9842b21ab.png" src="_images/73e8e8fd10f086d26ed70b57a7345e9332d10e464906d4851cda4fd9842b21ab.png" />
+</div>
+</div>
+<p>La distribución presenta una asimetría positiva, con la mayor frecuencia de valores concentrada cerca de cero y una disminución progresiva hacia valores más altos. Esto indica que la mayoría de las empresas tienen una rotación de cartera baja o moderada, lo que sugiere tiempos relativamente cortos para recuperar las cuentas por cobrar. Sin embargo, la cola alargada hacia valores más altos refleja la existencia de empresas con políticas de cobro más agresivas o con altos niveles de eficiencia en la recuperación de cartera.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">violin</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Rotación cartera&#39;</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;violin_rotación_cartera.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/46966a8e4eefe38531803f7a171c08bff1b29ac0d425f5fac234714879de652e.png" src="_images/46966a8e4eefe38531803f7a171c08bff1b29ac0d425f5fac234714879de652e.png" />
+</div>
+</div>
+<p>Muestra una concentración significativa de los datos alrededor de la mediana, mientras que los extremos reflejan valores más dispersos. La amplitud del rango intercuartil sugiere una variabilidad moderada en la rotación de cartera, con una densidad que disminuye hacia los valores más altos. Este comportamiento reafirma que la mayoría de las empresas operan dentro de un rango de rotación moderado, mientras que un número reducido alcanza valores extremos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Razón corriente&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;FDC/FLC&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Fecha de Corte&quot;</span><span class="p">,</span><span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7947fc4eac91cf627979b1e156b286ced3341eea4d097a85b745da82e6d14aba.png" src="_images/7947fc4eac91cf627979b1e156b286ced3341eea4d097a85b745da82e6d14aba.png" />
+</div>
+</div>
+<p>La relación entre la rotación de cartera y el FDC/FLC, segmentada por año. Se observa una distribución uniforme en el eje vertical, lo que sugiere que no existe una correlación directa evidente entre la rotación de cartera y la generación de flujo de caja libre. La densidad de puntos en el rango de rotación baja y moderada refuerza que la mayoría de las empresas operan en estos niveles, sin grandes fluctuaciones en su flujo de caja independiente del año de análisis.</p>
+</section>
+<section id="rotacion-inventario-producto-terminado">
+<h3>Rotación inventario producto terminado<a class="headerlink" href="#rotacion-inventario-producto-terminado" title="Link to this heading">#</a></h3>
+<p>La rotación de inventario de producto terminado mide cuántas veces una empresa vende y reemplaza su inventario de productos terminados en un período determinado, calculándose como costo de ventas dividido entre inventario promedio. Es crucial para evaluar la eficiencia operativa; una alta rotación indica una buena gestión del inventario y rápida venta de productos, mientras que una rotación baja puede señalar problemas de ventas, exceso de inventario o ineficiencia en la producción.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;summary_rotación_inventario_producto_terminado.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>Fecha de Corte</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017</th>
+      <td>3734.0</td>
+      <td>1.147617e+06</td>
+      <td>7.009088e+07</td>
+      <td>0.0</td>
+      <td>8.325483</td>
+      <td>53.856988</td>
+      <td>139.384080</td>
+      <td>4.283006e+09</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>3499.0</td>
+      <td>4.858337e+04</td>
+      <td>2.844405e+06</td>
+      <td>0.0</td>
+      <td>9.498461</td>
+      <td>54.521920</td>
+      <td>148.752598</td>
+      <td>1.682532e+08</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>4559.0</td>
+      <td>7.367679e+02</td>
+      <td>2.270826e+04</td>
+      <td>0.0</td>
+      <td>6.517747</td>
+      <td>49.806225</td>
+      <td>140.036256</td>
+      <td>1.492098e+06</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>5018.0</td>
+      <td>5.940971e+03</td>
+      <td>3.921041e+05</td>
+      <td>0.0</td>
+      <td>5.776894</td>
+      <td>50.804060</td>
+      <td>151.640717</td>
+      <td>2.777451e+07</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>5059.0</td>
+      <td>1.244830e+03</td>
+      <td>4.742500e+04</td>
+      <td>0.0</td>
+      <td>5.830003</td>
+      <td>48.428257</td>
+      <td>146.912353</td>
+      <td>3.208112e+06</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>5008.0</td>
+      <td>3.906520e+02</td>
+      <td>5.596787e+03</td>
+      <td>0.0</td>
+      <td>4.817802</td>
+      <td>45.892201</td>
+      <td>135.110197</td>
+      <td>3.034929e+05</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>4983.0</td>
+      <td>8.469576e+02</td>
+      <td>2.675146e+04</td>
+      <td>0.0</td>
+      <td>6.070416</td>
+      <td>44.799548</td>
+      <td>125.974998</td>
+      <td>1.464790e+06</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Rotación inventario producto terminado&#39;</span><span class="p">,</span>
+    <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>  
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribution de Rotación inventario&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;simple_white&quot;</span><span class="p">,</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#6a1b9a&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Ajustar las etiquetas</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Rotación inventario producto terminado&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Frequency&quot;</span><span class="p">,</span>
+    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span>  <span class="c1"># Centrar el título</span>
+<span class="p">)</span>
+
+<span class="c1"># Guardar la figura como un archivo Pickle</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;histograma_rotación_inventario_producto_terminado.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># O para guardar como HTML si prefieres visualización directa</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;histograma_rotación_inventario_producto_terminado.html&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/14ebdc09f974ebc916886b25792441c235317f535ec9b6ddf832deb26f16f907.png" src="_images/14ebdc09f974ebc916886b25792441c235317f535ec9b6ddf832deb26f16f907.png" />
+</div>
+</div>
+<p>Presenta una fuerte asimetría positiva, con una alta concentración de valores cerca de cero y una disminución progresiva hacia valores más altos. Esto indica que la mayoría de las empresas tienen una rotación de inventarios baja o moderada, lo que puede reflejar procesos de venta estables o un manejo conservador de los inventarios.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pickle_file</span> <span class="o">=</span> <span class="s2">&quot;violin_rotación_inventario_producto_terminado.pkl&quot;</span>  <span class="c1"># Reemplaza con el nombre o ruta de tu archivo</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pickle_file</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0ab2eee3ad6ed47978ba1efa85b17f943202489c65135c800dcbdedc913bbc96.png" src="_images/0ab2eee3ad6ed47978ba1efa85b17f943202489c65135c800dcbdedc913bbc96.png" />
+</div>
+</div>
+<p>La mayoría de los datos están concentrados cerca de la mediana, con un rango intercuartil que indica una variabilidad moderada. Las colas del gráfico muestran la presencia de valores extremos, lo que refuerza la idea de que existen algunas empresas con rotaciones de inventario inusualmente altas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pickle_file</span> <span class="o">=</span> <span class="s2">&quot;correlacion_rotación_cartera.pkl&quot;</span>  <span class="c1"># Reemplaza con el nombre o ruta de tu archivo</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pickle_file</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7947fc4eac91cf627979b1e156b286ced3341eea4d097a85b745da82e6d14aba.png" src="_images/7947fc4eac91cf627979b1e156b286ced3341eea4d097a85b745da82e6d14aba.png" />
+</div>
+</div>
+<p>El gráfico de dispersión ilustra la relación entre la rotación de inventario y el FDC/FLC, segmentada por año. No se observa una correlación clara entre estas dos variables, ya que los puntos están distribuidos de manera uniforme en el eje vertical. Esto sugiere que la rotación de inventario no tiene un impacto directo o consistente en la generación de flujos de caja libres, aunque la mayoría de los puntos se concentran en niveles bajos y moderados de rotación, lo que refuerza su predominancia en las operaciones empresariales.</p>
+</section>
+<section id="productividad-ktno">
+<h3>Productividad KTNO<a class="headerlink" href="#productividad-ktno" title="Link to this heading">#</a></h3>
+<p>La rotación de inventario de producto terminado mide cuántas veces una empresa vende y reemplaza su inventario de productos terminados en un período determinado, calculándose como costo de ventas dividido entre inventario promedio. Es crucial para evaluar la eficiencia operativa; una alta rotación indica una buena gestión del inventario y rápida venta de productos, mientras que una rotación baja puede señalar problemas de ventas, exceso de inventario o ineficiencia en la producción.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;summary_productividad_ktno.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>Fecha de Corte</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017</th>
+      <td>4291.0</td>
+      <td>3083.873308</td>
+      <td>201931.563349</td>
+      <td>-2.589974e+03</td>
+      <td>0.026382</td>
+      <td>0.163053</td>
+      <td>0.415936</td>
+      <td>1.322767e+07</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>4008.0</td>
+      <td>1.363764</td>
+      <td>30.887149</td>
+      <td>-8.592915e+02</td>
+      <td>0.030173</td>
+      <td>0.171598</td>
+      <td>0.459569</td>
+      <td>1.211335e+03</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>5197.0</td>
+      <td>-4.571883</td>
+      <td>473.232152</td>
+      <td>-3.388600e+04</td>
+      <td>0.034209</td>
+      <td>0.178309</td>
+      <td>0.440001</td>
+      <td>3.653443e+03</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>5751.0</td>
+      <td>0.832594</td>
+      <td>121.290470</td>
+      <td>-7.077806e+03</td>
+      <td>0.060736</td>
+      <td>0.243201</td>
+      <td>0.589472</td>
+      <td>4.626492e+03</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>5788.0</td>
+      <td>-401.381783</td>
+      <td>30961.971393</td>
+      <td>-2.355509e+06</td>
+      <td>0.061023</td>
+      <td>0.221076</td>
+      <td>0.545095</td>
+      <td>1.038485e+04</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>5811.0</td>
+      <td>553.828768</td>
+      <td>26906.984778</td>
+      <td>-2.787106e+02</td>
+      <td>0.059210</td>
+      <td>0.205856</td>
+      <td>0.509483</td>
+      <td>1.706343e+06</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>5730.0</td>
+      <td>4.531586</td>
+      <td>97.571464</td>
+      <td>-1.728386e+02</td>
+      <td>0.062574</td>
+      <td>0.211956</td>
+      <td>0.498341</td>
+      <td>4.725112e+03</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Productividad KTNO&#39;</span><span class="p">,</span>
+    <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>  
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribucion de Productividad KTNO&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;simple_white&quot;</span><span class="p">,</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#6a1b9a&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Productividad KTNO&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Frequency&quot;</span><span class="p">,</span>
+    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span>  
+<span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;histograma_productividad_ktno.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;histograma_productividad_ktno.html&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1dcd195769d65a690994eaf8fdd23669fab16ce68a1f8f6750db0f109084bb49.png" src="_images/1dcd195769d65a690994eaf8fdd23669fab16ce68a1f8f6750db0f109084bb49.png" />
+</div>
+</div>
+<p>La distribución de la productividad KTNO muestra una forma aproximadamente normal, con una alta concentración de valores cerca de 0 y una disminución progresiva hacia valores positivos y negativos extremos. Esto sugiere que la mayoría de las empresas tienen niveles de productividad operativa cercanos al promedio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">violin</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Productividad KTNO&#39;</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;violin_productividad_ktno.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/281255311dde0019cf1e3138e455f2858f44f8715568d7b9ea14132e30b72524.png" src="_images/281255311dde0019cf1e3138e455f2858f44f8715568d7b9ea14132e30b72524.png" />
+</div>
+</div>
+<p>La mayor densidad de datos está concentrada alrededor del valor promedio, con un rango intercuartil estrecho, lo que indica que la mayoría de las empresas tienen niveles de productividad similares. Sin embargo, las colas extendidas hacia valores extremos reflejan la presencia de algunas empresas con productividad muy alta o muy baja, destacando la variabilidad en los resultados operativos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Productividad KTNO&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;FDC/FLC&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;Fecha de Corte&quot;</span><span class="p">,</span><span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;correlacion_productividad_ktno.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;correlacion_productividad_ktno.html&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/217482588e130bb0a81a2f05baee32da7ac451a2e11732383a5968d5da0ba9b2.png" src="_images/217482588e130bb0a81a2f05baee32da7ac451a2e11732383a5968d5da0ba9b2.png" />
+</div>
+</div>
+<p>Aunque no se observa una correlación directa entre ambas variables, la distribución sugiere que la productividad KTNO influye de manera diversa en la generación de flujos de caja libre, dependiendo de las condiciones operativas de las empresas. La concentración de puntos alrededor de valores bajos de productividad refuerza su predominancia, mientras que los valores extremos destacan casos atípicos con un posible impacto financiero significativo.</p>
+</section>
+<section id="rotacion-proveedores">
+<h3>Rotación proveedores<a class="headerlink" href="#rotacion-proveedores" title="Link to this heading">#</a></h3>
+<p>La rotación de proveedores mide cuántas veces una empresa paga a sus proveedores en un período determinado, calculándose como el costo de ventas dividido entre las cuentas por pagar promedio. Es importante porque refleja la eficiencia en la gestión de pagos; una alta rotación indica pagos rápidos, lo que puede fortalecer relaciones con proveedores, mientras que una rotación baja sugiere demoras en los pagos, lo que podría afectar la credibilidad y acceso a crédito comercial.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;summary_rotación_proveedores.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>Fecha de Corte</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017</th>
+      <td>3734.0</td>
+      <td>304350.410942</td>
+      <td>1.853799e+07</td>
+      <td>0.0</td>
+      <td>37.396673</td>
+      <td>76.628063</td>
+      <td>146.350676</td>
+      <td>1.132792e+09</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>3499.0</td>
+      <td>94711.945801</td>
+      <td>5.564837e+06</td>
+      <td>0.0</td>
+      <td>38.912153</td>
+      <td>77.037363</td>
+      <td>147.521291</td>
+      <td>3.291736e+08</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>4559.0</td>
+      <td>7418.973625</td>
+      <td>4.447150e+05</td>
+      <td>0.0</td>
+      <td>34.797499</td>
+      <td>72.549394</td>
+      <td>142.207133</td>
+      <td>3.001558e+07</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>5018.0</td>
+      <td>1125.033180</td>
+      <td>2.678356e+04</td>
+      <td>0.0</td>
+      <td>33.956186</td>
+      <td>71.780047</td>
+      <td>147.315093</td>
+      <td>1.774860e+06</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>5059.0</td>
+      <td>3900.892093</td>
+      <td>1.392593e+05</td>
+      <td>0.0</td>
+      <td>31.682440</td>
+      <td>71.655970</td>
+      <td>139.120017</td>
+      <td>8.621272e+06</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>5008.0</td>
+      <td>1343.623856</td>
+      <td>3.639215e+04</td>
+      <td>0.0</td>
+      <td>30.344887</td>
+      <td>67.934469</td>
+      <td>134.264851</td>
+      <td>2.376360e+06</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>4983.0</td>
+      <td>1663.349318</td>
+      <td>6.867139e+04</td>
+      <td>0.0</td>
+      <td>28.031785</td>
+      <td>59.232440</td>
+      <td>117.034939</td>
+      <td>4.780826e+06</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Rotación proveedores&#39;</span><span class="p">,</span>
+    <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>  
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribucion de Rotación proveedores&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;simple_white&quot;</span><span class="p">,</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#6a1b9a&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Rotación proveedores&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Frequency&quot;</span><span class="p">,</span>
+    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span>  
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b2da4b63124dc0f4e6fb27e9257100f0913240c0ce085d7d9983e45a15ffec83.png" src="_images/b2da4b63124dc0f4e6fb27e9257100f0913240c0ce085d7d9983e45a15ffec83.png" />
+</div>
+</div>
+<p>La distribución de la rotación de proveedores muestra una fuerte asimetría positiva, con la mayoría de las empresas concentradas en valores bajos, por debajo de 100. Esto indica que gran parte de las empresas realiza pagos a sus proveedores con relativa lentitud o en plazos moderados. Sin embargo, la presencia de una cola extendida hacia valores altos, que alcanzan hasta 600, refleja que un pequeño grupo de empresas realiza pagos con mayor frecuencia, posiblemente debido a prácticas de gestión de proveedores más ágiles o a sectores con ciclos de pagos más cortos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;violin_rotación_proveedores.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0e722897e55987296b1d8a59b2d1b0eb5b59c9ef05a2bd9df66b7d0828c993e0.png" src="_images/0e722897e55987296b1d8a59b2d1b0eb5b59c9ef05a2bd9df66b7d0828c993e0.png" />
+</div>
+</div>
+<p>El gráfico de violín ofrece una representación detallada de la dispersión de la rotación de proveedores, con una alta concentración de datos cerca de la mediana y un rango intercuartil relativamente estrecho. Las colas largas en la distribución reflejan la presencia de valores extremos, lo que sugiere variaciones significativas en las prácticas de pago entre empresas. La forma del gráfico resalta que, aunque la mayoría opera en un rango definido, hay empresas con políticas de pago significativamente más rápidas o más frecuentes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;correlacion_rotación_proveedores.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/34d58c4f73630179ab3815333028333ae3b7dd3ca603fb64f67047708dc4b3bb.png" src="_images/34d58c4f73630179ab3815333028333ae3b7dd3ca603fb64f67047708dc4b3bb.png" />
+</div>
+</div>
+<p>El gráfico de dispersión ilustra la relación entre la rotación de proveedores y el FDC/FLC, segmentada por año. No se identifica una correlación clara entre ambas variables, ya que los puntos están distribuidos uniformemente en el eje vertical. Sin embargo, se observa una mayor densidad en niveles bajos de rotación de proveedores, lo que refuerza la predominancia de estas prácticas en la mayoría de las empresas. Los valores extremos en la rotación parecen no tener un impacto significativo en el flujo de caja libre, reflejando dinámicas independientes en su gestión operativa.</p>
+</section>
+</section>
+<section id="indicador-de-rentabilidad">
+<h2>Indicador de Rentabilidad<a class="headerlink" href="#indicador-de-rentabilidad" title="Link to this heading">#</a></h2>
+<section id="roa">
+<h3>ROA<a class="headerlink" href="#roa" title="Link to this heading">#</a></h3>
+<p>El <strong>ROA (Return on Assets)</strong> mide la rentabilidad de una empresa en relación con sus activos totales, calculándose como utilidad neta dividida entre activos totales. Es crucial porque refleja qué tan eficientemente una empresa utiliza sus activos para generar ganancias; un ROA alto indica un uso eficiente de los recursos, mientras que un ROA bajo puede señalar ineficiencia o inversiones poco rentables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;ROA&#39;</span><span class="p">,</span>
+    <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>  
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribucion de ROA&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;simple_white&quot;</span><span class="p">,</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#6a1b9a&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;ROA&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Frequency&quot;</span><span class="p">,</span>
+    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span>  
+<span class="p">)</span>
+
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6c6974ff13e0f62abf7a56f030978af3e2b812c55f2c359d3c83baddd7b4c404.png" src="_images/6c6974ff13e0f62abf7a56f030978af3e2b812c55f2c359d3c83baddd7b4c404.png" />
+</div>
+</div>
+<p>La distribución muestra una forma aproximadamente normal, con una alta concentración de valores cercanos a cero y una disminución hacia los extremos positivos y negativos. Esto sugiere que la mayoría de las empresas tienen un rendimiento moderado en relación con sus activos, mientras que los valores extremos reflejan casos de alta rentabilidad o ineficiencia significativa. La simetría relativa alrededor de cero indica que tanto rendimientos positivos como negativos son comunes, aunque en menor proporción.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;violin_roa.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2525f0dc562dd162a0dbfb1f12acb1f1030beadb959196568d40cf575d2c13ef.png" src="_images/2525f0dc562dd162a0dbfb1f12acb1f1030beadb959196568d40cf575d2c13ef.png" />
+</div>
+</div>
+<p>La concentración de valores cerca de la mediana, con un rango intercuartil relativamente estrecho, lo que indica que la mayoría de las empresas operan con niveles similares de rentabilidad de activos. Las colas largas hacia los extremos positivos y negativos destacan la presencia de valores atípicos, que reflejan empresas con resultados financieros excepcionales, ya sea por eficiencia operativa o dificultades significativas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;correlacion_roa_roa.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/06e74e32f8bf7f038955734d369bc7fa7e064968ae0bc5e2b984e8953f97b878.png" src="_images/06e74e32f8bf7f038955734d369bc7fa7e064968ae0bc5e2b984e8953f97b878.png" />
+</div>
+</div>
+<p>El ROA y el FDC/FLC, segmentada por año. Aunque no se observa una correlación clara, los puntos muestran una distribución uniforme alrededor del eje central, lo que indica que el rendimiento de los activos no tiene un impacto directo en la generación de flujos de caja libres. La concentración de puntos cercanos a cero en el ROA refuerza su prevalencia como un nivel típico de desempeño empresarial, mientras que los valores extremos destacan casos puntuales de interés.</p>
+</section>
+<section id="roe">
+<h3>ROE<a class="headerlink" href="#roe" title="Link to this heading">#</a></h3>
+<p>El <strong>ROE (Return on Equity)</strong> mide la rentabilidad de una empresa en relación con el capital de sus accionistas, calculándose como utilidad neta dividida entre patrimonio total. Es clave porque indica qué tan eficientemente una empresa utiliza los recursos de sus accionistas para generar ganancias; un ROE alto refleja una gestión efectiva y atractiva para los inversionistas, mientras que un ROE bajo puede señalar problemas de rentabilidad o uso ineficiente del capital.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;ROE&#39;</span><span class="p">,</span>
+    <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>  
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribucion de ROE&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;simple_white&quot;</span><span class="p">,</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#6a1b9a&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;ROE&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Frequency&quot;</span><span class="p">,</span>
+    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span>  
+<span class="p">)</span>
+
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6a3fc0826a8dbe9730e06bd0a1e1c0d1e8346d9c5a3385f94b0fbbe7252b77c0.png" src="_images/6a3fc0826a8dbe9730e06bd0a1e1c0d1e8346d9c5a3385f94b0fbbe7252b77c0.png" />
+</div>
+</div>
+<p>La distribución del ROE presenta una forma aproximadamente normal, con la mayor concentración de valores cercanos a cero y una disminución hacia los extremos positivos y negativos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;violin_roe.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/112b34cfe15c53f168fb5b8c19beba821ad175060e66b74b799653502f9c5dcd.png" src="_images/112b34cfe15c53f168fb5b8c19beba821ad175060e66b74b799653502f9c5dcd.png" />
+</div>
+</div>
+<p>ROE muestra una alta concentración de valores alrededor de la mediana, con un rango intercuartil estrecho que indica consistencia en el desempeño de la mayoría de las empresas. Las colas largas hacia los extremos positivos y negativos reflejan la presencia de valores atípicos que representan empresas con resultados financieros excepcionales.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;correlacion_roe.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8c95339e82871e8671643ba70908ada378b6f9a2f5ce74c27ace84cf65e37e94.png" src="_images/8c95339e82871e8671643ba70908ada378b6f9a2f5ce74c27ace84cf65e37e94.png" />
+</div>
+</div>
+<p>No se observa una correlación directa entre estas dos variables, ya que los puntos se distribuyen uniformemente alrededor del eje central. La concentración de puntos en niveles bajos de ROE refuerza la prevalencia de resultados moderados en la mayoría de las empresas, mientras que los valores extremos representan casos puntuales con un posible impacto significativo en el flujo de caja libre.</p>
+</section>
+</section>
+<section id="indicador-de-endeudamiento">
+<h2>Indicador de Endeudamiento<a class="headerlink" href="#indicador-de-endeudamiento" title="Link to this heading">#</a></h2>
+<section id="servicio-a-la-deuda">
+<h3>Servicio a la deuda<a class="headerlink" href="#servicio-a-la-deuda" title="Link to this heading">#</a></h3>
+<p>El servicio de deuda se refiere al monto total que una empresa destina al pago de sus obligaciones financieras, incluyendo intereses y amortización de préstamos en un período determinado. Es crucial porque refleja la capacidad de la empresa para cumplir con sus compromisos financieros sin comprometer su operación.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SD&#39;</span><span class="p">,</span>
+    <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>  
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribucion de Servicio a la Deuda&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;simple_white&quot;</span><span class="p">,</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#6a1b9a&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;SD&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Frequency&quot;</span><span class="p">,</span>
+    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span>  <span class="c1"># Centrar el título</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4ffd3c95fbaba042b43d976504b135abce90844ad4c7f2333fe1759aa5b72e15.png" src="_images/4ffd3c95fbaba042b43d976504b135abce90844ad4c7f2333fe1759aa5b72e15.png" />
+</div>
+</div>
+<p>Servicio a la deuda muestra una clara asimetría positiva, con una alta concentración de valores cercanos a cero y una disminución progresiva hacia montos más altos. Esto indica que la mayoría de las empresas destinan una porción relativamente pequeña de sus recursos al pago de deudas, mientras que unas pocas empresas tienen compromisos financieros significativamente mayores, lo que puede estar relacionado con sus niveles de apalancamiento o tamaño.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">violin</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;SD&#39;</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;violin_sd.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ba1acc38a34da5872d9a5c0f50b9add1945721f8db3da10b925acf40000a9403.png" src="_images/ba1acc38a34da5872d9a5c0f50b9add1945721f8db3da10b925acf40000a9403.png" />
+</div>
+</div>
+<p>Las colas largas hacia valores más altos reflejan la presencia de empresas con obligaciones financieras elevadas, lo que sugiere variaciones significativas entre las políticas de financiamiento de las empresas analizadas. La forma compacta del rango intercuartil indica que, para la mayoría, el servicio a la deuda se encuentra dentro de un rango moderado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;correlacion_sd.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5153d69b0e06afab8a1f2a52cfffc5b9cd60940155f5399056f8e101c4505df9.png" src="_images/5153d69b0e06afab8a1f2a52cfffc5b9cd60940155f5399056f8e101c4505df9.png" />
+</div>
+</div>
+<p>No se observa una correlación directa, los puntos más densos se encuentran en niveles bajos de SD, lo que refuerza la predominancia de compromisos financieros moderados en la mayoría de las empresas. Los valores más altos de SD no parecen alterar significativamente la generación de flujos de caja libres, sugiriendo que las empresas con mayores deudas pueden estar manejándolas eficientemente.</p>
+</section>
+<section id="nivel-de-endeudamiento">
+<h3>Nivel de endeudamiento<a class="headerlink" href="#nivel-de-endeudamiento" title="Link to this heading">#</a></h3>
+<p>El nivel de endeudamiento mide la proporción de deuda en relación con el total de activos de una empresa, calculándose como deuda total dividida entre activos totales. Es un indicador clave para evaluar la solvencia y el riesgo financiero; un nivel alto puede reflejar dependencia de financiamiento externo y mayor riesgo de incumplimiento, mientras que un nivel bajo indica mayor estabilidad financiera y menor exposición al riesgo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Nivel de endeudamiento&#39;</span><span class="p">,</span>
+    <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>  
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribucion de Nivel de endeudamiento&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;simple_white&quot;</span><span class="p">,</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#6a1b9a&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Nivel de endeudamiento&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Frequency&quot;</span><span class="p">,</span>
+    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span>  <span class="c1"># Centrar el título</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e300e993123be4743e84b745df94058baa1452da4312228fd7dd6dc47b42df17.png" src="_images/e300e993123be4743e84b745df94058baa1452da4312228fd7dd6dc47b42df17.png" />
+</div>
+</div>
+<p>El nivel de endeudamiento presenta una forma asimétrica hacia la derecha, con un pico alrededor de 0.5, lo que indica que la mayoría de las empresas tienen deudas que representan aproximadamente la mitad de sus activos totales. A medida que el nivel de endeudamiento aumenta, la frecuencia disminuye, reflejando que un menor número de empresas opera con altos niveles de apalancamiento financiero, lo que podría implicar mayores riesgos financieros.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;violin_nivel_de_endeudamiento.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f253631c6318d529c51f1a5cfc9a3397dad55fdb4688624283253040dbce5d1e.png" src="_images/f253631c6318d529c51f1a5cfc9a3397dad55fdb4688624283253040dbce5d1e.png" />
+</div>
+</div>
+<p>Este grafico muestra una alta concentración de datos alrededor del rango intercuartil, con valores medios cercanos a 0.5, lo que confirma que la mayoría de las empresas tienen un nivel de endeudamiento moderado. Las colas extendidas hacia los valores superiores reflejan la presencia de empresas con altos niveles de endeudamiento.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;correlacion_nivel_de_endeudamiento.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ff1467f41460c545c6587b0faa8b4dbc40e6f28999787a958932b403f57aa045.png" src="_images/ff1467f41460c545c6587b0faa8b4dbc40e6f28999787a958932b403f57aa045.png" />
+</div>
+</div>
+<p>El gráfico de dispersión muestra la relación entre el nivel de endeudamiento y el FDC/FLC, segmentada por año. No se observa una correlación clara entre ambas variables, ya que los puntos están distribuidos uniformemente en el eje vertical. La densidad más alta se encuentra en niveles de endeudamiento moderados (alrededor de 0.5), lo que sugiere que las empresas con estos niveles tienden a mantener una relación equilibrada entre deuda y generación de flujo de caja libre.</p>
+</section>
+</section>
+<section id="ratio-como-variable-objetivo">
+<h2>Ratio como variable objetivo<a class="headerlink" href="#ratio-como-variable-objetivo" title="Link to this heading">#</a></h2>
+<p>El ratio FDC/FLC fue seleccionado como la variable objetivo para este análisis porque permite evaluar de manera directa la capacidad de las empresas para cubrir sus obligaciones financieras con el flujo de caja libre generado. Este indicador es particularmente relevante ya que proporciona una visión integral de la sostenibilidad financiera, categorizando a las empresas según su capacidad para afrontar sus deudas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Fecha de Corte&quot;</span><span class="p">)[</span><span class="s2">&quot;FDC/FLC&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()[[</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">,</span> <span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="s2">&quot;25%&quot;</span><span class="p">,</span> <span class="s2">&quot;50%&quot;</span><span class="p">,</span> <span class="s2">&quot;75%&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>Fecha de Corte</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017</th>
+      <td>4357.0</td>
+      <td>0.567283</td>
+      <td>43.961329</td>
+      <td>-1141.373882</td>
+      <td>-7.709130e-02</td>
+      <td>0.665267</td>
+      <td>1.187729</td>
+      <td>1.785533e+03</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>4078.0</td>
+      <td>6.104428</td>
+      <td>341.435758</td>
+      <td>-1045.145711</td>
+      <td>-7.204549e-02</td>
+      <td>0.669508</td>
+      <td>1.186394</td>
+      <td>2.164360e+04</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>5278.0</td>
+      <td>0.730954</td>
+      <td>49.508592</td>
+      <td>-1883.207960</td>
+      <td>-7.739292e-02</td>
+      <td>0.656616</td>
+      <td>1.198563</td>
+      <td>1.414194e+03</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>5832.0</td>
+      <td>570.290686</td>
+      <td>43238.341443</td>
+      <td>-1918.399038</td>
+      <td>6.370954e-03</td>
+      <td>0.757025</td>
+      <td>1.171325</td>
+      <td>3.301999e+06</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>5895.0</td>
+      <td>0.491734</td>
+      <td>25.094648</td>
+      <td>-758.695202</td>
+      <td>7.641435e-07</td>
+      <td>0.724434</td>
+      <td>1.124769</td>
+      <td>8.685242e+02</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>5910.0</td>
+      <td>0.596987</td>
+      <td>79.449556</td>
+      <td>-4453.707269</td>
+      <td>-7.689910e-04</td>
+      <td>0.755153</td>
+      <td>1.110945</td>
+      <td>2.409303e+03</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>5818.0</td>
+      <td>-3.778404</td>
+      <td>234.413132</td>
+      <td>-16196.547529</td>
+      <td>-3.369933e-02</td>
+      <td>0.656644</td>
+      <td>1.096296</td>
+      <td>1.304555e+03</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>La tabla muestra una alta variabilidad en los datos, evidenciada por las desviaciones estándar significativamente mayores que los promedios, especialmente en años como 2020 y 2023, debido a valores extremos en los mínimos y máximos. Aunque la mediana y los percentiles (25% y 75%) permanecen relativamente estables, con valores entre -0.07 y 1.18, lo que refleja un comportamiento consistente para la mayoría de las empresas, los valores extremos negativos y positivos (como -16,196 en 2023 y 3,301,999 en 2020) indican la presencia de empresas con dificultades financieras graves o con capacidad excepcional de generación de flujo de caja libre.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;FDC/FLC&quot;</span><span class="p">,</span>
+    <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>  
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Distribution de FDC/FLC&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;simple_white&quot;</span><span class="p">,</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#6a1b9a&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;FDC/FLC&quot;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Frequency&quot;</span><span class="p">,</span>
+    <span class="n">title_font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span> 
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/317597f028cf37e37878dad406b68fc5518bcf5766753848b6f64d1d7e80a0c5.png" src="_images/317597f028cf37e37878dad406b68fc5518bcf5766753848b6f64d1d7e80a0c5.png" />
+</div>
+</div>
+<p>La distribución  <strong>FDC/FLC</strong> presenta con una alta concentración de valores cercanos a cero y una disminución simétrica hacia los extremos positivos y negativos. Esto sugiere que la mayoría de las empresas tienen una capacidad moderada para generar flujo de caja libre en relación con sus obligaciones financieras. Los valores extremos reflejan casos de empresas con capacidad excepcional para cubrir deudas o, en el otro extremo, con dificultades significativas para hacerlo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.67</span><span class="p">,</span> <span class="mf">0.80</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&lt;0&#39;</span><span class="p">,</span> <span class="s1">&#39;[0, 0.67)&#39;</span><span class="p">,</span> <span class="s1">&#39;[0.67, 0.80)&#39;</span><span class="p">,</span> <span class="s1">&#39;[0.80, 1)&#39;</span><span class="p">,</span> <span class="s1">&#39;[1, ∞)&#39;</span><span class="p">]</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;FDC_FLC_categoria&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;FDC/FLC&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este código se realiza una categorización de los valores de la variable <code class="docutils literal notranslate"><span class="pre">FDC/FLC</span></code> mediante la creación de intervalos predefinidos. Los datos continuos del ratio se agrupan en categorías con límites específicos, y a cada intervalo se le asigna una etiqueta representativa. Esto permite clasificar los valores del ratio en rangos significativos, facilitando su análisis e interpretación en términos de grupos discretos, como niveles de desempeño financiero o capacidad para cubrir obligaciones. La categorización es especialmente útil para análisis comparativos o modelos que requieran variables categóricas.</p>
+<p>Cantidad de empresas segun su categoria, con un total de 5832 en el año <strong>2020</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">category_counts</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;FDC_FLC_categoria&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">category_counts</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Categoria&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad&#39;</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#0077b6&#39;</span><span class="p">,</span> <span class="s1">&#39;#00b4d8&#39;</span><span class="p">,</span> <span class="s1">&#39;#caf0f8&#39;</span><span class="p">,</span> <span class="s1">&#39;#90e0ef&#39;</span><span class="p">,</span> <span class="s1">&#39;#03045e&#39;</span><span class="p">]</span> 
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">category_counts</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Categoria&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Cantidad&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39; Cantidad de empresas por Categorías de FDC/FLC &#39;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Categoria&#39;</span><span class="p">:</span> <span class="s1">&#39;Categoría&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad&#39;</span><span class="p">:</span> <span class="s1">&#39;Cantidad&#39;</span><span class="p">},</span>
+    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Cantidad&#39;</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Categoría&quot;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Cantidad&quot;</span><span class="p">,</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
+<span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;barras_3.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0090c9a0d0193dd9bbff63192b088b56757d87fcdf957b9a86e9aee5c3288689.png" src="_images/0090c9a0d0193dd9bbff63192b088b56757d87fcdf957b9a86e9aee5c3288689.png" />
+</div>
+</div>
+<p>Cantidad de empresas segun su categoria, con un total de 5278 en el año <strong>2019</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">category_counts</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;FDC_FLC_categoria&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">category_counts</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Categoria&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad&#39;</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#0077b6&#39;</span><span class="p">,</span> <span class="s1">&#39;#00b4d8&#39;</span><span class="p">,</span> <span class="s1">&#39;#caf0f8&#39;</span><span class="p">,</span> <span class="s1">&#39;#90e0ef&#39;</span><span class="p">,</span> <span class="s1">&#39;#03045e&#39;</span><span class="p">]</span> 
+<span class="c1"># Crear el diagrama de barras con Plotly</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">category_counts</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Categoria&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Cantidad&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39; Cantidad de empresas por Categorías de FDC/FLC &#39;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Categoria&#39;</span><span class="p">:</span> <span class="s1">&#39;Categoría&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad&#39;</span><span class="p">:</span> <span class="s1">&#39;Cantidad&#39;</span><span class="p">},</span>
+    <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Cantidad&#39;</span> <span class="c1"># Usar la categoría para asignar colores</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">))</span>
+<span class="c1"># Personalizar el diseño</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Categoría&quot;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Cantidad&quot;</span><span class="p">,</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
+<span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;barras_2.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b0e18f88373a8df277b354799e1aa41499740474bb6a4304022f5ad7a7fed746.png" src="_images/b0e18f88373a8df277b354799e1aa41499740474bb6a4304022f5ad7a7fed746.png" />
+</div>
+</div>
+<p>Comparando las distribuciones de empresas por categorías de FDC/FLC entre 2019 y 2020, se observan diferencias significativas que podrían estar relacionadas con eventos económicos globales y nacionales, como la pandemia de COVID-19 en 2020.</p>
+<p>En 2019, un mayor número de empresas (1,827) se encuentra en la categoría [1, ∞), lo que indica una sólida capacidad de cubrir sus deudas, mientras que 1,508 empresas están en la categoría &lt;0, lo que sugiere dificultades financieras importantes. La distribución general refleja un escenario más equilibrado, típico de un año con operaciones más estables.</p>
+<p>En 2020, hay un aumento en el número de empresas en la categoría &lt;0 (1,410), aunque disminuye levemente en comparación con 2019. Sin embargo, se observa un incremento significativo en la categoría [1, ∞) (2,021 empresas), lo que podría estar relacionado con medidas adoptadas durante la pandemia, como reducción de gastos, acceso a ayudas gubernamentales, reestructuración de deudas o adaptaciones rápidas en ciertos sectores económicos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">box</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;FDC_FLC_categoria&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;FDC/FLC&quot;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Dispersión de valores por categorías&quot;</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;FDC/FLC&quot;</span><span class="p">:</span> <span class="s2">&quot;Variable Numérica&quot;</span><span class="p">,</span> <span class="s2">&quot;FDC_FLC_categoria&quot;</span><span class="p">:</span> <span class="s2">&quot;Categoría&quot;</span><span class="p">},</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;FDC_FLC_categoria&quot;</span><span class="p">,</span>  <span class="c1"># Asignar color a las categorías</span>
+    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#003f5c&quot;</span><span class="p">,</span> <span class="s1">&#39;#0077b6&#39;</span><span class="p">,</span> <span class="s1">&#39;#00b4d8&#39;</span><span class="p">,</span> <span class="s1">&#39;#3dccc7&#39;</span><span class="p">,</span> <span class="s1">&#39;#03045e&#39;</span><span class="p">]</span> <span class="c1"># Colores personalizados</span>
+<span class="p">)</span>
+<span class="c1"># Personalizar el diseño</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># Centrar el título</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;Categoría&quot;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;FDC/FLC&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;violin_6.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b902627e2eef4377d5802267928fa3005cd30d1eaf23c334d3d9f33cdfde22c3.png" src="_images/b902627e2eef4377d5802267928fa3005cd30d1eaf23c334d3d9f33cdfde22c3.png" />
+</div>
+</div>
+<p>La categoría <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">∞)</span></code> presenta valores positivos significativamente dispersos, con una mediana claramente por encima de 1, lo que refleja empresas con una alta capacidad para cubrir sus deudas. Sin embargo, también se identifican valores atípicos que extienden la dispersión hacia rangos aún mayores.</p>
+<p>Las categorías intermedias (<code class="docutils literal notranslate"><span class="pre">[0.80,</span> <span class="pre">1)</span></code>, <code class="docutils literal notranslate"><span class="pre">[0.67,</span> <span class="pre">0.80)</span></code> y <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0.67)</span></code>) muestran rangos más estrechos y concentrados alrededor de sus medianas, lo que indica un comportamiento financiero más estable pero moderado en comparación con las empresas en la categoría superior.</p>
+<p>La categoría <code class="docutils literal notranslate"><span class="pre">&lt;0</span></code> destaca por su dispersión hacia valores negativos extremos, lo que representa empresas con flujos de caja insuficientes para cubrir sus obligaciones financieras. Esto refleja mayores riesgos financieros y vulnerabilidades, especialmente en contextos económicos adversos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">categorias</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;FDC_FLC_categoria&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="c1"># Variables a correlacionar</span>
+<span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ROA&quot;</span><span class="p">,</span> <span class="s2">&quot;ROE&quot;</span><span class="p">,</span><span class="s1">&#39;Nivel de endeudamiento&#39;</span><span class="p">,</span><span class="s1">&#39;Razón corriente&#39;</span><span class="p">,</span><span class="s1">&#39;Rotación inventario producto terminado&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Rotación cartera&#39;</span><span class="p">,</span> <span class="s1">&#39;Rotación proveedores&#39;</span><span class="p">,</span> <span class="s1">&#39;Productividad KTNO&#39;</span><span class="p">,</span><span class="s1">&#39;Generación Efectivo&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;SD&#39;</span><span class="p">,</span> <span class="s1">&#39;Generación FLC&#39;</span><span class="p">]</span>
+
+<span class="c1"># Preparar la matriz de correlación combinada</span>
+<span class="n">matriz_correlacion</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">categorias_labels</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Calcular las correlaciones por cada categoría</span>
+<span class="k">for</span> <span class="n">categoria</span> <span class="ow">in</span> <span class="n">categorias</span><span class="p">:</span>
+    <span class="c1"># Filtrar datos por categoría</span>
+    <span class="n">data_filtrada</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;FDC_FLC_categoria&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">categoria</span><span class="p">]</span>
+    
+    <span class="c1"># Verificar si hay suficientes datos para calcular la correlación</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_filtrada</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># Al menos 2 filas son necesarias para calcular correlaciones</span>
+        <span class="c1"># Calcular correlación de FDC/FLC con otras variables</span>
+        <span class="n">correlacion</span> <span class="o">=</span> <span class="n">data_filtrada</span><span class="p">[[</span><span class="s2">&quot;FDC/FLC&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">variables</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;FDC/FLC&quot;</span><span class="p">,</span> <span class="n">variables</span><span class="p">]</span>
+        
+        <span class="c1"># Añadir la fila de correlaciones a la matriz</span>
+        <span class="n">matriz_correlacion</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">correlacion</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+        <span class="n">categorias_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">categoria</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Categoría &#39;</span><span class="si">{</span><span class="n">categoria</span><span class="si">}</span><span class="s2">&#39; no tiene suficientes datos para calcular la correlación.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Verificar si la matriz de correlación está completa</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">matriz_correlacion</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="c1"># Crear el gráfico de matriz de calor combinado</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_annotated_heatmap</span><span class="p">(</span>
+        <span class="n">z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">matriz_correlacion</span><span class="p">),</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">variables</span><span class="p">,</span>  <span class="c1"># Variables</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">categorias_labels</span><span class="p">,</span>  <span class="c1"># Categorías como filas</span>
+        <span class="n">annotation_text</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">matriz_correlacion</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="n">colorscale</span><span class="o">=</span><span class="s2">&quot;Viridis&quot;</span><span class="p">,</span>
+        <span class="n">showscale</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Personalizar el diseño del gráfico</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Correlación de FDC/FLC con Variables por Categoría&quot;</span><span class="p">,</span>
+        <span class="n">title_x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Categorías&quot;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+        <span class="n">height</span><span class="o">=</span><span class="mi">500</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Mostrar el gráfico</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No se pudieron calcular correlaciones suficientes para generar la matriz.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ef7b86fe49cfb4aa23032cc0e446d6e2481a14876586c4da063538ba29953a40.png" src="_images/ef7b86fe49cfb4aa23032cc0e446d6e2481a14876586c4da063538ba29953a40.png" />
+</div>
+</div>
+<p>En general, el mapa de calor revela algunos leves patrones consistentes entre la capacidad de las empresas para cubrir sus deudas (medida por el ratio FDC/FLC) y variables clave como rentabilidad, manejo de deudas y eficiencia operativa. Esto subraya la importancia de estas métricas en la evaluación de la salud financiera empresarial.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="edapyme.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exploración de datos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Modelo_Propuesto.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Librerías y paquetes necesarios</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Énfasis en la Visualización de Indices</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comportamiento-entre-variables">Comportamiento entre variables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicador-de-liquidez">Indicador de Liquidez</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#razon-corriente">Razón Corriente</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacion-de-cartera">Rotación de cartera</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacion-inventario-producto-terminado">Rotación inventario producto terminado</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#productividad-ktno">Productividad KTNO</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotacion-proveedores">Rotación proveedores</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicador-de-rentabilidad">Indicador de Rentabilidad</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roa">ROA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roe">ROE</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicador-de-endeudamiento">Indicador de Endeudamiento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#servicio-a-la-deuda">Servicio a la deuda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-de-endeudamiento">Nivel de endeudamiento</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ratio-como-variable-objetivo">Ratio como variable objetivo</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kelly Beltran Y Henry Saenz
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
